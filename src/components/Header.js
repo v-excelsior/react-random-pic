@@ -1,31 +1,42 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-function Header() {
-  const links = [
-    { text: 'Home', path: '/', isExact: true },
-    { text: 'Cats', path: '/cats', isExact: false },
-    { text: 'Dogs', path: '/dogs', isExact: false },
-    { text: 'Foxes', path: '/foxes', isExact: false },
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
 
-  ]
-  const element = (
-    <header>
-      <nav>
-        <h1>First react app</h1>
-        <ul>
-          {links.map((link, i) => (
-            <li key={i}>
-              <NavLink to={link.path} exact={link.isExact} activeClassName="active-link">
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
-  )
-  return element
+function Header() {
+    const links = [
+        { text: 'Home', path: '/', isExact: true },
+        { text: 'Cats', path: '/cats', isExact: false },
+        { text: 'Dogs', path: '/dogs', isExact: false },
+        { text: 'Foxes', path: '/foxes', isExact: false },
+    ]
+    const element = (
+        <header>
+            <div>
+                <AppBar position="static">
+                    <Toolbar>
+                        <nav className='nav'>
+                            <ul className='nav__list'>
+                                {links.map((link, i) => (
+                                    <li key={i} className='nav__list-link'>
+                                        <NavLink
+                                            to={link.path}
+                                            exact={link.isExact}
+                                            activeClassName="active-link"
+                                        >
+                                            {link.text}
+                                        </NavLink>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </Toolbar>
+                </AppBar>
+            </div>
+        </header>
+    )
+    return element
 }
 
 export default Header

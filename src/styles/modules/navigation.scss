@@ -1,0 +1,18 @@
+.nav {
+    display: flex;
+    justify-content: center;
+}
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+.nav__list-link {
+    padding: 0 10px;
+    &:hover {
+        color: lightgray;
+    }
+}
+
+.active-link {
+    border-bottom: 2px solid gray;
+}

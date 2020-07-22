@@ -1,6 +1,8 @@
 import React from 'react'
 import { dogService } from '../services'
 
+import Button from '@material-ui/core/Button'
+
 class DogsPage extends React.Component {
     constructor(props) {
         super(props)
@@ -22,7 +24,9 @@ class DogsPage extends React.Component {
         return (
             <div>
                 <h1>This is a cat!</h1>
-                <button onClick={this.getImage}>Get new</button>
+                <Button onClick={this.getImage} color="inherit">
+                    Get new
+                </Button>
                 <hr></hr>
                 <img src={this.state.imgUrl} alt="Cat" />
             </div>

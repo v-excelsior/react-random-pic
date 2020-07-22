@@ -1,12 +1,12 @@
+@import './modules/navigation.scss';
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 a {
-  color: inherit;
-  text-decoration: none;
-}
-.active-link {
-  border-bottom: 2px solid gray;
+    color: inherit;
+    text-decoration: none;
 }
