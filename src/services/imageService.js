@@ -1,4 +1,4 @@
-// import axios from 'axios'
+import axios from 'axios'
 
 export class ImageService {
     constructor(url, animal) {
@@ -6,15 +6,13 @@ export class ImageService {
         this.animal = animal
     }
     async getURL() {
-        // let response = await axios.get('https://api.thedogapi.com/v1/images/search')
+        let response = await axios.get(this.apiURL)
         switch (this.animal) {
             case 'cat':
             case 'dog':
-                console.log('cat or dog')
-                break
+                return response.data[0].url
             case 'fox':
-                console.log('fox')
-                break
+                return response.data.image
             default:
                 console.log('"' + this.animal + '" is not support')
         }
@@ -22,4 +20,3 @@ export class ImageService {
 }
 
 //?mime_types=gif
-// return response.data[0].url

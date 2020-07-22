@@ -6,6 +6,8 @@ function Header() {
     { text: 'Home', path: '/', isExact: true },
     { text: 'Cats', path: '/cats', isExact: false },
     { text: 'Dogs', path: '/dogs', isExact: false },
+    { text: 'Foxes', path: '/foxes', isExact: false },
+
   ]
   const element = (
     <header>

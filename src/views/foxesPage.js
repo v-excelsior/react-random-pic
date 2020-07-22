@@ -1,7 +1,7 @@
 import React from 'react'
 import { foxService } from '../services'
 
-class FoxPage extends React.Component {
+class FoxesPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -24,10 +24,10 @@ class FoxPage extends React.Component {
                 <h1>This is a cat!</h1>
                 <button onClick={this.getImage}>Get new</button>
                 <hr></hr>
-                <img src={this.state.imgUrl} alt="Cat" />
+                <img src={this.state.imgUrl} alt="Fox" />
             </div>
         )
     }
 }
 
-export default DogsPage
+export default FoxesPage
