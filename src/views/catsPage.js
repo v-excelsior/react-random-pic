@@ -1,7 +1,7 @@
 import React from 'react'
 import { catService } from '../services'
 
-class СatsPage extends React.Component {
+class CatsPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,7 +14,7 @@ class СatsPage extends React.Component {
     }
     async getImage() {
         this.setState({
-            imgUrl: await catService.getImageURL(),
+            imgUrl: await catService.getURL(),
         })
     }
 
@@ -30,4 +30,4 @@ class СatsPage extends React.Component {
     }
 }
 
-export default СatsPage
+export default CatsPage

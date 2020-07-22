@@ -1,7 +1,7 @@
 import React from 'react'
-import { dogService } from '../services'
+import { foxService } from '../services'
 
-class DogsPage extends React.Component {
+class FoxPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,7 +14,7 @@ class DogsPage extends React.Component {
     }
     async getImage() {
         this.setState({
-            imgUrl: await dogService.getURL(),
+            imgUrl: await foxService.getURL(),
         })
     }
 
