@@ -1,6 +1,9 @@
 import React from 'react'
 import { dogService } from '../services'
 
+import { connect } from 'react-redux'
+import { sayHello } from '../redux/actions'
+
 import Button from '@material-ui/core/Button'
 
 class DogsPage extends React.Component {
@@ -10,6 +13,7 @@ class DogsPage extends React.Component {
             imgUrl: '',
         }
         this.getImage = this.getImage.bind(this)
+        this.x = this.x.bind(this)
     }
     async componentDidMount() {
         this.getImage()
@@ -20,6 +24,10 @@ class DogsPage extends React.Component {
         })
     }
 
+    async x() {
+        const { dispatch } = this.props
+        dispatch(sayHello())
+    }
     render() {
         let image
         if (this.state.imgUrl) {
@@ -33,6 +41,9 @@ class DogsPage extends React.Component {
                 <Button onClick={this.getImage} color="inherit">
                     Get new
                 </Button>
+                <button onClick={this.x} color="inherit">
+                    Say hello
+                </button>
                 <hr></hr>
                 {image}
             </div>
@@ -40,4 +51,4 @@ class DogsPage extends React.Component {
     }
 }
 
-export default DogsPage
+export default connect()(DogsPage)
