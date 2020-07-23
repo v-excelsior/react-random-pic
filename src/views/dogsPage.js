@@ -21,6 +21,12 @@ class DogsPage extends React.Component {
     }
 
     render() {
+        let image
+        if (this.state.imgUrl) {
+            image = <img src={this.state.imgUrl} alt="Cat" />
+        } else {
+            image = <span>Loading...</span>
+        }
         return (
             <div>
                 <h1>This is a cat!</h1>
@@ -28,7 +34,7 @@ class DogsPage extends React.Component {
                     Get new
                 </Button>
                 <hr></hr>
-                <img src={this.state.imgUrl} alt="Cat" />
+                {image}
             </div>
         )
     }

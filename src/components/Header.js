@@ -16,10 +16,10 @@ function Header() {
             <div>
                 <AppBar position="static">
                     <Toolbar>
-                        <nav className='nav'>
-                            <ul className='nav__list'>
+                        <nav className="nav">
+                            <ul className="nav__list">
                                 {links.map((link, i) => (
-                                    <li key={i} className='nav__list-link'>
+                                    <li key={i} className="nav__list-link">
                                         <NavLink
                                             to={link.path}
                                             exact={link.isExact}
