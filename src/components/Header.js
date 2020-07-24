@@ -13,27 +13,25 @@ function Header() {
     ]
     const element = (
         <header>
-            <div>
-                <AppBar position="static">
-                    <Toolbar>
-                        <nav className="nav">
-                            <ul className="nav__list">
-                                {links.map((link, i) => (
-                                    <li key={i} className="nav__list-link">
-                                        <NavLink
-                                            to={link.path}
-                                            exact={link.isExact}
-                                            activeClassName="active-link"
-                                        >
-                                            {link.text}
-                                        </NavLink>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
-                    </Toolbar>
-                </AppBar>
-            </div>
+            <AppBar position="static">
+                <Toolbar>
+                    <nav className="nav">
+                        <ul className="nav__list">
+                            {links.map((link, i) => (
+                                <li key={i} className="nav__list-link">
+                                    <NavLink
+                                        to={link.path}
+                                        exact={link.isExact}
+                                        activeClassName="active-link"
+                                    >
+                                        {link.text}
+                                    </NavLink>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </Toolbar>
+            </AppBar>
         </header>
     )
     return element

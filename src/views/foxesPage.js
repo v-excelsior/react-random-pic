@@ -24,7 +24,7 @@ class FoxesPage extends React.Component {
         return (
             <div>
                 <h1>This is a cat!</h1>
-                <Button onClick={this.getImage} color="inherit">
+                <Button onClick={this.getImage} variant="contained" color="primary">
                     Get new
                 </Button>
                 <hr></hr>
