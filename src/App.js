@@ -5,6 +5,7 @@ import mainPage from './views/mainPage'
 import catsPage from './views/catsPage'
 import dogsPage from './views/dogsPage'
 import foxesPage from './views/foxesPage'
+import collectionPage from './views/collectionPage'
 
 export default function SidebarExample() {
     return (
@@ -15,6 +16,7 @@ export default function SidebarExample() {
                 <Route path="/cats" component={catsPage} />
                 <Route path="/dogs" component={dogsPage} />
                 <Route path="/foxes" component={foxesPage} />
+                <Route path="/collection" component={collectionPage} />
             </Switch>
         </Router>
     )

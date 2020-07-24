@@ -40,7 +40,7 @@ class DogsPage extends React.Component {
                     Get new
                 </Button>
                 <Button onClick={this.testDispatch} variant="contained" color="primary">
-                    Say hello
+                    Add image
                 </Button>
                 <hr></hr>
                 {image}

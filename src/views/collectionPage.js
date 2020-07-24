@@ -5,20 +5,30 @@ class CollectionPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
-        this.getImage = this.getImage.bind(this)
     }
 
     render() {
         return (
             <div>
-                <h1>This is a cat!</h1>
-                <Button onClick={this.getImage} color="inherit">
-                    Get new
-                </Button>
-                <hr></hr>
+                <h1>All images from collection</h1>
+                <hr />
+                {this.props.collection.map((imageUrl, i) => (
+                    <img
+                        key={i}
+                        src={imageUrl}
+                        className="collection-card__image"
+                        alt="Here must be an image,but somethink went wrong ;("
+                    />
+                ))}
             </div>
         )
     }
 }
 
-export default connect()(CollectionPage)
+const mapStateToProps = (state) => {
+    return {
+        collection: state.collection.collection,
+    }
+}
+
+export default connect(mapStateToProps, null)(CollectionPage)
