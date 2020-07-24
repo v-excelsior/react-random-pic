@@ -1,6 +1,8 @@
-export function sayHello() {
+import { ADD_IMAGE } from './types'
+
+export function addImage(imageUrl) {
     return {
-        type: 'HELLO',
+        type: ADD_IMAGE,
+        payload: imageUrl,  
     }
 }
-    

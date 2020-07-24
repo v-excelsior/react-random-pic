@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 class CollectionPage extends React.Component {
     constructor(props) {
@@ -20,4 +21,4 @@ class CollectionPage extends React.Component {
     }
 }
 
-export default CollectionPage
+export default connect()(CollectionPage)

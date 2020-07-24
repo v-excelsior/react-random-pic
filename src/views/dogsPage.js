@@ -1,8 +1,8 @@
 import React from 'react'
 import { dogService } from '../services'
-
 import { connect } from 'react-redux'
-// import { sayHello } from '../redux/actions'
+
+import { addImage } from '../redux/actions'
 
 import Button from '@material-ui/core/Button'
 
@@ -13,7 +13,7 @@ class DogsPage extends React.Component {
             imgUrl: '',
         }
         this.getImage = this.getImage.bind(this)
-        // this.testDispatch = this.testDispatch.bind(this)
+        this.testDispatch = this.testDispatch.bind(this)
     }
     async componentDidMount() {
         this.getImage()
@@ -23,11 +23,9 @@ class DogsPage extends React.Component {
             imgUrl: await dogService.getURL(),
         })
     }
-
-    // async testDispatch() {
-    //     const { dispatch } = this.props
-    //     dispatch(sayHello())
-    // }
+    testDispatch() {
+        this.props.addImage(this.state.imgUrl)
+    }
     render() {
         let image
         if (this.state.imgUrl) {
@@ -41,9 +39,9 @@ class DogsPage extends React.Component {
                 <Button onClick={this.getImage} variant="contained" color="primary">
                     Get new
                 </Button>
-                {/* <Button onClick={this.testDispatch} variant="contained" color="primary">
+                <Button onClick={this.testDispatch} variant="contained" color="primary">
                     Say hello
-                </Button> */}
+                </Button>
                 <hr></hr>
                 {image}
             </div>
@@ -51,4 +49,8 @@ class DogsPage extends React.Component {
     }
 }
 
-export default connect()(DogsPage)
+const mapDispatchToProps = {
+    addImage,
+}
+
+export default connect(null, mapDispatchToProps)(DogsPage)
