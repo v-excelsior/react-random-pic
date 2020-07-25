@@ -3,6 +3,7 @@ import { ADD_IMAGE } from './types'
 const initialState = {
     collection: [],
 }
+
 export const collectionReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_IMAGE:

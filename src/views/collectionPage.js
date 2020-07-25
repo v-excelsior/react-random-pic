@@ -12,6 +12,7 @@ class CollectionPage extends React.Component {
             <div>
                 <h1>All images from collection</h1>
                 <hr />
+                {/* eslint-disable */}
                 {this.props.collection.map((imageUrl, i) => (
                     <img
                         key={i}
@@ -20,6 +21,7 @@ class CollectionPage extends React.Component {
                         alt="Here must be an image,but somethink went wrong ;("
                     />
                 ))}
+                {/* eslint-enable */}
             </div>
         )
     }

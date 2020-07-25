@@ -24,7 +24,7 @@ class DogsPage extends React.Component {
         })
     }
     testDispatch() {
-        this.props.addImage(this.state.imgUrl)
+
     }
     render() {
         let image
@@ -39,7 +39,9 @@ class DogsPage extends React.Component {
                 <Button onClick={this.getImage} variant="contained" color="primary">
                     Get new
                 </Button>
-                <Button onClick={this.testDispatch} variant="contained" color="primary">
+                <Button onClick={() => this.props.addImage(this.state.imgUrl)}
+                    variant="contained"
+                    color="primary">
                     Add image
                 </Button>
                 <hr></hr>
