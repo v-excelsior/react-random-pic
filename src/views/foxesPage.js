@@ -14,6 +14,12 @@ function FoxesPage() {
         setImgUrl(url)
     }
 
+    let image
+    if (imgUrl) {
+        image = <img src={imgUrl} alt="Fox" />
+    } else {
+        image = <span>Loading...</span>
+    }
     return (
         <div>
             <h1>This is a cat!</h1>
@@ -22,7 +28,7 @@ function FoxesPage() {
                 Get new
             </Button>
             <hr></hr>
-            <img src={imgUrl} alt="Fox" />
+            {image}
         </div >
     )
 
