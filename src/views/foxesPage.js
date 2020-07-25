@@ -1,34 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { foxService } from '../services'
 
 import Button from '@material-ui/core/Button'
 
 function FoxesPage() {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         imgUrl: '',
-    //     }
-    //     this.getImage = this.getImage.bind(this)
-    // }
+
     const [imgUrl, setImgUrl] = useState('');
 
-    // async componentDidMount() {
-    //     this.getImage()
-    // }
-    async function getImage() {
+    useEffect(() => { setNewImage() }, []);
+
+    async function setNewImage() {
         let url = await foxService.getURL()
         setImgUrl(url)
     }
+
     return (
         <div>
             <h1>This is a cat!</h1>
-            <Button onClick={getImage} variant="contained" color="primary">
+            <Button onClick={setNewImage}
+                variant="contained" color="primary">
                 Get new
-                </Button>
+            </Button>
             <hr></hr>
             <img src={imgUrl} alt="Fox" />
-        </div>
+        </div >
     )
 
 }
