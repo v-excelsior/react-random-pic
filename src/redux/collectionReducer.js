@@ -2,7 +2,7 @@ import { ADD_IMAGE } from './types'
 
 const initialState = {
     collection: [],
-    imageTypeCounter: {
+    animals: {
         cats: 0,
         dogs: 0,
         foxes: 0,
@@ -12,7 +12,7 @@ const initialState = {
 export const collectionReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_IMAGE:
-            return { ...state, collection: state.collection.concat([action.payload]) }
+            return { ...state, collection: state.collection.concat([action.url]) }
         default:
             return state
     }

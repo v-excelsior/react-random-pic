@@ -1,8 +1,9 @@
 import { ADD_IMAGE } from './types'
 
-export function addImage(imageUrl) {
+export function addImage(imageUrl, animalType) {
     return {
         type: ADD_IMAGE,
-        payload: imageUrl,  
+        url: imageUrl,
+        animal: animalType,
     }
 }

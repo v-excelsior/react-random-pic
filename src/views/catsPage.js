@@ -8,8 +8,9 @@ import { addImage } from '../redux/actions'
 import Button from '@material-ui/core/Button'
 
 function CatsPage({ addImage }) {
-    const [imgUrl, setImgUrl] = useState('')
+    const animalType = 'cat'
 
+    const [imgUrl, setImgUrl] = useState('')
     useEffect(() => {
         setNewImage()
     }, [])
@@ -32,7 +33,7 @@ function CatsPage({ addImage }) {
             <Button onClick={setNewImage} variant="contained" color="primary">
                 Get new
             </Button>
-            <Button onClick={() => addImage(imgUrl)} variant="contained" color="primary">
+            <Button onClick={() => addImage(imgUrl,animalType)} variant="contained" color="primary">
                 Add image
             </Button>
             <hr></hr>

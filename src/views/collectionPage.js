@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-function CollectionPage({ collection }) {
+function CollectionPage({ collection, animals }) {
+    console.log(collection, animals)
     return (
         <div>
             <h1>All images from collection</h1>
@@ -23,7 +24,7 @@ function CollectionPage({ collection }) {
 const mapStateToProps = (state) => {
     return {
         collection: state.collection.collection,
+        animals: state.collection.animals,
     }
 }
-
 export default connect(mapStateToProps, null)(CollectionPage)
