@@ -15,7 +15,7 @@ function FoxesPage({ addImage }) {
     useEffect(() => {
         setNewImage()
     }, [])
-    
+
     useEffect(() => {
         setNewImage()
     }, [])
@@ -38,7 +38,11 @@ function FoxesPage({ addImage }) {
             <Button onClick={setNewImage} variant="contained" color="primary">
                 Get new
             </Button>
-            <Button onClick={() => addImage(imgUrl,animalType)} variant="contained" color="primary">
+            <Button
+                onClick={() => addImage(imgUrl, animalType)}
+                variant="contained"
+                color="primary"
+            >
                 Add image
             </Button>
             <hr></hr>
