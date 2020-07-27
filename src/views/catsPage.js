@@ -1,37 +1,48 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+
 import { catService } from '../services'
+
+import { addImage } from '../redux/actions'
 
 import Button from '@material-ui/core/Button'
 
-class CatsPage extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            imgUrl: '',
-        }
-        this.getImage = this.getImage.bind(this)
-    }
-    async componentDidMount() {
-        this.getImage()
-    }
-    async getImage() {
-        this.setState({
-            imgUrl: await catService.getURL(),
-        })
+function CatsPage({ addImage }) {
+    const [imgUrl, setImgUrl] = useState('')
+
+    useEffect(() => {
+        setNewImage()
+    }, [])
+
+    async function setNewImage() {
+        let url = await catService.getURL()
+        setImgUrl(url)
     }
 
-    render() {
-        return (
-            <div>
-                <h1>This is a cat!</h1>
-                <Button onClick={this.getImage} variant="contained" color="primary">
-                    Get new
-                </Button>
-                <hr></hr>
-                <img src={this.state.imgUrl} alt="Cat" />
-            </div>
-        )
+    let image
+    if (imgUrl) {
+        image = <img src={imgUrl} alt="Dog" />
+    } else {
+        image = <span>Loading...</span>
     }
+
+    return (
+        <div>
+            <h1>This is a cat!</h1>
+            <Button onClick={setNewImage} variant="contained" color="primary">
+                Get new
+            </Button>
+            <Button onClick={() => addImage(imgUrl)} variant="contained" color="primary">
+                Add image
+            </Button>
+            <hr></hr>
+            {image}
+        </div>
+    )
 }
 
-export default CatsPage
+const mapDispatchToProps = {
+    addImage,
+}
+
+export default connect(null, mapDispatchToProps)(CatsPage)
