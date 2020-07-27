@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
+import AnimalCounter from './AnimalCounter'
 
 function Header() {
     const links = [
@@ -31,6 +32,7 @@ function Header() {
                             ))}
                         </ul>
                     </nav>
+                    <AnimalCounter />
                 </Toolbar>
             </AppBar>
         </header>

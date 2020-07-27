@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 function CollectionPage({ collection, animals }) {
-    console.log(collection, animals)
     return (
         <div>
             <h1>All images from collection</h1>

@@ -16,10 +16,6 @@ function FoxesPage({ addImage }) {
         setNewImage()
     }, [])
 
-    useEffect(() => {
-        setNewImage()
-    }, [])
-
     async function setNewImage() {
         let url = await foxService.getURL()
         setImgUrl(url)
