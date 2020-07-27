@@ -1,5 +1,5 @@
 import React from "react";
 
-const mainPage = () => <h1>Main Page</h1>;
+const mainPage = () => <h2 className="page-title">Main Page</h2>;
 
 export default mainPage;

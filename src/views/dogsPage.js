@@ -30,7 +30,7 @@ function DogsPage({ addImage }) {
 
     return (
         <div>
-            <h1>This is a dog!</h1>
+            <h2 align="center">This is a dog!</h2>
             <Button onClick={setNewImage} variant="contained" color="primary">
                 Get new
             </Button>

@@ -29,19 +29,28 @@ function FoxesPage({ addImage }) {
     }
 
     return (
-        <div>
-            <h1>This is a cat!</h1>
-            <Button onClick={setNewImage} variant="contained" color="primary">
-                Get new
-            </Button>
-            <Button
-                onClick={() => addImage(imgUrl, animalType)}
-                variant="contained"
-                color="primary"
-            >
-                Add image
-            </Button>
+        <div className="page">
+            <h2 className="page-title">This is a cat!</h2>
             <hr></hr>
+            <div className="control-wrapper">
+                <Button
+                    className="control-btn"
+                    onClick={setNewImage}
+                    variant="contained"
+                    color="primary"
+                >
+                    Get new
+                </Button>
+                <Button
+                    className="control-btn"
+                    onClick={() => addImage(imgUrl, animalType)}
+                    variant="contained"
+                    color="primary"
+                >
+                    Add image
+                </Button>
+            </div>
+
             {image}
         </div>
     )

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 function CollectionPage({ collection, animals }) {
     return (
         <div>
-            <h1>All images from collection</h1>
+            <h2 className="page-title">All images from collection</h2>
             <hr />
             {collection.map((imageUrl, i) => (
                 <img

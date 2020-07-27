@@ -29,7 +29,7 @@ function CatsPage({ addImage }) {
 
     return (
         <div>
-            <h1>This is a cat!</h1>
+            <h2 className="page-title">This is a cat!</h2>
             <Button onClick={setNewImage} variant="contained" color="primary">
                 Get new
             </Button>

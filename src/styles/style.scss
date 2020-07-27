@@ -1,4 +1,6 @@
-@import './modules/navigation.scss';
+@import './modules/header.scss';
+@import './modules/animal-counter.scss';
+
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -14,3 +16,16 @@ a {
 .collection-card__image {
     height: 120px;
 }
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-title{
+    text-align: center;
+    margin: 16px 0;
+}
+
+// .control-btn{
+//     margin: 100000px;
+// }
