@@ -18,7 +18,6 @@ function CollectionPage({ collection }) {
 const mapStateToProps = (state) => {
     return {
         collection: state.collection.collection,
-        animals: state.collection.animals,
     }
 }
 export default connect(mapStateToProps, null)(CollectionPage)
