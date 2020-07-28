@@ -1,4 +1,5 @@
 import React from 'react'
+import CollectionCard from '../components/CollectionCard'
 import { connect } from 'react-redux'
 
 function CollectionPage({ collection, animals }) {
@@ -6,12 +7,7 @@ function CollectionPage({ collection, animals }) {
         <div>
             <h2 className="page-title">All images from collection</h2>
             {collection.map((imageUrl, i) => (
-                <img
-                    key={i}
-                    src={imageUrl}
-                    className="collection-card__image"
-                    alt="Collection card"
-                />
+                <CollectionCard imageUrl={imageUrl} key={i} />
             ))}
         </div>
     )
