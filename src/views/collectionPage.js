@@ -2,13 +2,15 @@ import React from 'react'
 import CollectionCard from '../components/CollectionCard'
 import { connect } from 'react-redux'
 
-function CollectionPage({ collection, animals }) {
+function CollectionPage({ collection }) {
     return (
-        <div>
+        <div className="collection">
             <h2 className="page-title">All images from collection</h2>
-            {collection.map((imageUrl, i) => (
-                <CollectionCard imageUrl={imageUrl} key={i} />
-            ))}
+            <div className="collection-list">
+                {collection.map((imageUrl, i) => (
+                    <CollectionCard imageUrl={imageUrl} key={i} />
+                ))}
+            </div>
         </div>
     )
 }

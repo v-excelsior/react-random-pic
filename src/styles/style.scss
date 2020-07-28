@@ -11,10 +11,29 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
-.collection-card__image {
-    height: 120px;
+.collection {
+    display: flex;
+    flex-direction: column;
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &::after {
+            content: '';
+            flex-grow: 1;
+        }
+    }
+    &-card {
+        display: flex;
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+        &__image {
+            height: 120px;
+        }
+    }
 }
+
 .page {
     display: flex;
     flex-direction: column;
