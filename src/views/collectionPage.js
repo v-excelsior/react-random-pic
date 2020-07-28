@@ -5,7 +5,6 @@ function CollectionPage({ collection, animals }) {
     return (
         <div>
             <h2 className="page-title">All images from collection</h2>
-            <hr />
             {collection.map((imageUrl, i) => (
                 <img
                     key={i}

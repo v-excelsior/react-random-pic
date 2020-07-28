@@ -8,11 +8,25 @@ import App from './App'
 import './styles/style.scss'
 import * as serviceWorker from './serviceWorker'
 
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+
 const store = createStore(rootReducer, composeWithDevTools())
+
+const theme = createMuiTheme({
+    overrides: {
+        MuiButton: {
+            root: {
+                margin: '10px',
+            },
+        },
+    },
+})
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
     </Provider>,
     document.getElementById('root')
 )

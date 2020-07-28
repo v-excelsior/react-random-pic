@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import { dogService } from '../services'
-
 import { addImage } from '../redux/actions'
 
 import Button from '@material-ui/core/Button'
@@ -23,21 +22,28 @@ function DogsPage({ addImage }) {
 
     let image
     if (imgUrl) {
-        image = <img src={imgUrl} alt="Dog" />
+        image = <img src={imgUrl} alt={animalType} />
     } else {
         image = <span>Loading...</span>
     }
 
     return (
-        <div>
-            <h2 align="center">This is a dog!</h2>
-            <Button onClick={setNewImage} variant="contained" color="primary">
-                Get new
-            </Button>
-            <Button onClick={() => addImage(imgUrl,animalType)} variant="contained" color="primary">
-                Add image
-            </Button>
+        <div className="page">
+            <h2 className="page-title">This is a {animalType}!</h2>
+
             <hr></hr>
+            <div className="control-wrapper">
+                <Button onClick={setNewImage} variant="contained" color="primary">
+                    Get new
+                </Button>
+                <Button
+                    onClick={() => addImage(imgUrl, animalType)}
+                    variant="contained"
+                    color="primary"
+                >
+                    Save image
+                </Button>
+            </div>
             {image}
         </div>
     )
