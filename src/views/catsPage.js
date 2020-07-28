@@ -40,6 +40,7 @@ function CatsPage({ addImage }) {
                     onClick={() => addImage(imgUrl, animalType)}
                     variant="contained"
                     color="primary"
+                    disabled={!imgUrl}
                 >
                     Save image
                 </Button>

@@ -1,4 +1,4 @@
-import { ADD_IMAGE } from './types'
+import { ADD_IMAGE, DELETE_IMAGE } from './types'
 
 const initialState = {
     collection: [],
@@ -18,6 +18,11 @@ export const collectionReducer = (state = initialState, action) => {
                 animals: Object.assign({}, state.animals, {
                     [action.animal]: ++state.animals[action.animal],
                 }),
+            }
+        case DELETE_IMAGE:
+            return {
+                ...state,
+                collection: state.collection.filter(element => element !== action.url)
             }
         default:
             return state

@@ -38,6 +38,7 @@ function FoxesPage({ addImage }) {
                     onClick={() => addImage(imgUrl, animalType)}
                     variant="contained"
                     color="primary"
+                    disabled={!imgUrl}
                 >
                     Add image
                 </Button>
