@@ -7,8 +7,8 @@ function CollectionPage({ collection }) {
         <div className="collection">
             <h2 className="page-title">All images from collection</h2>
             <div className="collection-list">
-                {collection.map((imageUrl, i) => (
-                    <CollectionCard imageUrl={imageUrl} key={i} />
+                {collection.map((item, i) => (
+                    <CollectionCard imageUrl={item.url} key={i} animal={item.animal} />
                 ))}
             </div>
         </div>
