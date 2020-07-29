@@ -14,7 +14,7 @@ export const collectionReducer = (state = initialState, action) => {
         case ADD_IMAGE:
             return {
                 ...state,
-                collection: state.collection.concat([{ url: action.url, animal: action.animal }]),
+                collection: [...state.collection, { url: action.url, animal: action.animal }],
             }
         case DELETE_IMAGE:
             return {

@@ -18,5 +18,3 @@ export class ImageService {
         }
     }
 }
-
-//?mime_types=gif
