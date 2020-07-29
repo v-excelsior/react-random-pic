@@ -12,6 +12,5 @@ export function deleteImage(imageUrl) {
     return {
         type: DELETE_IMAGE,
         url: imageUrl,
-        // animal: animalType,
     }
 }
