@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 
 import { addImage } from '../redux/actions'
@@ -16,12 +16,9 @@ function ImagePicker({ animalType, onGetUrl, addImage }) {
         setNewImage()
     }, [setNewImage])
 
-    let image
-    if (imgUrl) {
-        image = <img src={imgUrl} alt={animalType} />
-    } else {
-        image = <span>Loading...</span>
-    }
+    const image = imgUrl
+        ? <img src={imgUrl} alt={animalType}/>
+        : <span>Loading...</span>
 
     return (
         <div className="page">

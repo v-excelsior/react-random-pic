@@ -4,19 +4,13 @@ import { catService } from '../services'
 
 import ImagePicker from '../components/ImagePicker'
 
-function CatsPage() {
-    const animalType = 'dog'
-
-    async function GetUrlFromService() {
-        return await catService.getURL()
-    }
+export default function CatsPage() {
+    const animalType = 'cat'
 
     return (
         <div className="page">
             <h2 className="page-title">This is a {animalType}!</h2>
-            <ImagePicker animalType={animalType} onGetUrl={GetUrlFromService} />
+            <ImagePicker animalType={animalType} onGetUrl={catService.getURL} />
         </div>
     )
 }
-
-export default CatsPage

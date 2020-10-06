@@ -6,7 +6,6 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { rootReducer } from './redux/rootReducer'
 import App from './App'
 import './styles/style.scss'
-import * as serviceWorker from './serviceWorker'
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
@@ -31,4 +30,3 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-serviceWorker.unregister()
