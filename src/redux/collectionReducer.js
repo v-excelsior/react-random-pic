@@ -1,12 +1,12 @@
 import { ADD_IMAGE, DELETE_IMAGE } from './types'
 
-const stubCat = {
+const stub = {
     url: 'https://s.mind.ua/img/forall/a/201973/49.jpg?1558127037',
     animal: 'cat',
 }
 
 const initialState = {
-    collection: [stubCat], // [{url:'',animal:''}]
+    collection: [stub], 
 }
 
 export const collectionReducer = (state = initialState, action) => {

@@ -8,13 +8,13 @@
         height: 120px;
     }
     &__delete-btn {
+        cursor: pointer;
+        background-color: transparent;
         position: absolute;
         outline: none;
         border: none;
+        height: 24px;
         top: 0;
         right: 0;
-        width: 16px;
-        height: 16px;
-        background-color: red;
     }
 }

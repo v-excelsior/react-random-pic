@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { deleteImage } from '../redux/actions'
 
+import CloseIcon from '@material-ui/icons/Close'
+
 function CollectionCard({ imageUrl, deleteImage }) {
     return (
         <div className="collection-card">
