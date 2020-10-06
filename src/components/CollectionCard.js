@@ -5,8 +5,13 @@ import { deleteImage } from '../redux/actions'
 function CollectionCard({ imageUrl, deleteImage }) {
     return (
         <div className="collection-card">
-            <button className="collection-card__delete-btn" onClick={() => deleteImage(imageUrl)} />
-            <img src={imageUrl} className="collection-card__image" alt="Collection card" />
+            <button
+                className="collection-card__delete-btn"
+                onClick={() => deleteImage(imageUrl)}/>
+            <img
+                src={imageUrl}
+                className="collection-card__image"
+                alt="Collection card"/>
         </div>
     )
 }
